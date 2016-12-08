@@ -93,12 +93,14 @@
             "referral": userid
         });
 
-        os = getMobileOperatingSystem();
-        if (os == "Android") {
-            window.location = "https://play.google.com/store/apps/details?id=com.harborcrew.zt";
-        } else {
-            window.location = "https://itunes.apple.com/us/app/zombies-on-a-train/id1181350534";
-        }
+        window.setTimeout(function() {
+            os = getMobileOperatingSystem();
+            if (os == "Android") {
+                window.location = "https://play.google.com/store/apps/details?id=com.harborcrew.zt";
+            } else {
+                window.location = "https://itunes.apple.com/us/app/zombies-on-a-train/id1181350534";
+            }
+        }, 2000);
     </script>
 </body>
 
