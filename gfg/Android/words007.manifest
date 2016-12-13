@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 1633311429
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b6f95ed7987a494252bdb4b9dc2d65ed
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: bd9b8ef9b4408c57ede837380aae26ba
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 649b0bfb0f6b8354081d049a52b57e94, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/Packages/Words007/package.asset
+Dependencies: []

@@ -1,0 +1,79 @@
+ManifestFileVersion: 0
+CRC: 2337618777
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: words003
+      Dependencies: {}
+    Info_1:
+      Name: questions001
+      Dependencies: {}
+    Info_2:
+      Name: words002
+      Dependencies: {}
+    Info_3:
+      Name: words001
+      Dependencies: {}
+    Info_4:
+      Name: words004
+      Dependencies: {}
+    Info_5:
+      Name: localization.en-us
+      Dependencies: {}
+    Info_6:
+      Name: content
+      Dependencies: {}
+    Info_7:
+      Name: questions002
+      Dependencies: {}
+    Info_8:
+      Name: questions004
+      Dependencies: {}
+    Info_9:
+      Name: questions006
+      Dependencies: {}
+    Info_10:
+      Name: questions008
+      Dependencies: {}
+    Info_11:
+      Name: questions009
+      Dependencies: {}
+    Info_12:
+      Name: questions012
+      Dependencies: {}
+    Info_13:
+      Name: questions013
+      Dependencies: {}
+    Info_14:
+      Name: questions014
+      Dependencies: {}
+    Info_15:
+      Name: questions015
+      Dependencies: {}
+    Info_16:
+      Name: questions016
+      Dependencies: {}
+    Info_17:
+      Name: questions017
+      Dependencies: {}
+    Info_18:
+      Name: questions018
+      Dependencies: {}
+    Info_19:
+      Name: questions019
+      Dependencies: {}
+    Info_20:
+      Name: questions020
+      Dependencies: {}
+    Info_21:
+      Name: questions021
+      Dependencies: {}
+    Info_22:
+      Name: words005
+      Dependencies: {}
+    Info_23:
+      Name: words006
+      Dependencies: {}
+    Info_24:
+      Name: words007
+      Dependencies: {}

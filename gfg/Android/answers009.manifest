@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 2397801247
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 009dc775e90103bba623f4f54d0e4d97
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1c27b75480b7be912171ac8ed6eae17c
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 03df9e7e38c8d734da19bd6a98271248, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/Packages/answers009/package.asset
+Dependencies: []
