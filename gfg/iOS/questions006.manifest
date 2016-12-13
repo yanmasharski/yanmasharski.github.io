@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 2420411099
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 938342d0a283f2dc2fb6ddb347e701d1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0c8a8c68b5e209b9ff034998a12728f3
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: baeabe05c5dbe438785f88ae53e6cc40, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b3640185b74dd44b3877d25949ba6f4c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8bf366274cece4547831e4f7a644edbb, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/Packages/questions006/package.asset
+Dependencies: []

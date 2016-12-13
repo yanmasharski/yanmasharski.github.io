@@ -1,0 +1,34 @@
+ManifestFileVersion: 0
+CRC: 3636078729
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9d4db999babcc19a4d1bd306870495ad
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e4818a74b6fae49ba4cae88375eccc7d
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: b652193584503854daec8dd1efb06d4c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 649b0bfb0f6b8354081d049a52b57e94, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Packages/Words001/package.asset
+- Assets/Packages/Words001/Textures/one.png
+- Assets/Packages/Words001/Textures/nine.png
+- Assets/Packages/Words001/Textures/four.png
+- Assets/Packages/Words001/Textures/ten.png
+- Assets/Packages/Words001/Textures/five.png
+- Assets/Packages/Words001/Textures/six.png
+- Assets/Packages/Words001/Textures/seven.png
+- Assets/Packages/Words001/Textures/two.png
+- Assets/Packages/Words001/Textures/three.png
+- Assets/Packages/Words001/Textures/eight.png
+Dependencies: []
