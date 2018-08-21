@@ -30,14 +30,16 @@
             var pbjs = pbjs || {};
             pbjs.que = pbjs.que || [];
 
-            pbjs.setConfig({
+           
+
+            pbjs.que.push(function() {
+                pbjs.setConfig({
     s2sConfig: {
         adapter: 'prebidServer',
         endpoint: 'http://ec2-54-67-86-61.us-west-1.compute.amazonaws.com//pbs/v1/auction',
     }
 })
 
-            pbjs.que.push(function() {
                 pbjs.addAdUnits(adUnits);
                 pbjs.requestBids({
                     bidsBackHandler: initAdserver,
