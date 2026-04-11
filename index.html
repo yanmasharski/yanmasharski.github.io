@@ -1,491 +1,988 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Jan Mašarski – CV</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-            rel="stylesheet"
-        />
-        <style>
-            :root {
-                --primary: #1e293b;
-                --accent: #2563eb;
-                --text: #0f172a;
-                --bg: #f8fafc;
-                --muted: #475569;
-            }
-            * {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
-                font-family: "Inter", sans-serif;
-            }
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jan Mašarski — Systems Architect & Engineering Leader</title>
+    <meta name="description" content="Jan Mašarski — Engineering Leader, Systems Architect, and Problem Solver with 15+ years building high-performance game systems and leading engineering teams." />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-card-hover: rgba(255, 255, 255, 0.06);
+            --bg-glass: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.06);
+            --border-accent: rgba(99, 102, 241, 0.3);
+            --text-primary: #e8e8ed;
+            --text-secondary: #8b8b9e;
+            --text-muted: #5a5a6e;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --accent-warm: #f59e0b;
+            --accent-teal: #14b8a6;
+            --accent-rose: #f43f5e;
+            --gradient-accent: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
+            --gradient-warm: linear-gradient(135deg, #f59e0b, #f97316);
+            --gradient-teal: linear-gradient(135deg, #14b8a6, #06b6d4);
+            --gradient-subtle: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.05));
+            --radius: 12px;
+            --radius-sm: 8px;
+            --radius-lg: 20px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.3);
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ─── Background Ambient ─── */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(99,102,241,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(139,92,246,0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(20,184,166,0.03) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+            animation: ambientShift 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes ambientShift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-2%, -1%) rotate(1deg); }
+        }
+
+        /* ─── Layout ─── */
+        .page {
+            position: relative;
+            z-index: 1;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+        }
+
+        /* ─── Header / Identity ─── */
+        .header {
+            margin-bottom: 3.5rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 120px;
+            height: 2px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+        }
+
+        .header__name {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #e8e8ed 30%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .header__title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--accent-light);
+            letter-spacing: 0.02em;
+            margin-bottom: 1.25rem;
+        }
+
+        .header__tagline {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+
+        .header__contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .header__contact a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .header__contact a:hover {
+            color: var(--accent-light);
+        }
+
+        .header__contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .header__contact-item svg {
+            width: 16px;
+            height: 16px;
+            opacity: 0.5;
+            flex-shrink: 0;
+        }
+
+        /* ─── Sections ─── */
+        .section {
+            margin-bottom: 3.5rem;
+        }
+
+        .section__title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section__title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ─── Philosophy Quote ─── */
+        .philosophy {
+            position: relative;
+            padding: 1.75rem 2rem;
+            background: var(--bg-glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 3.5rem;
+        }
+
+        .philosophy::before {
+            content: '"';
+            position: absolute;
+            top: -0.15rem;
+            left: 1.25rem;
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--accent);
+            opacity: 0.25;
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .philosophy__text {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.7;
+            padding-left: 1rem;
+        }
+
+        /* ─── Value Proposition / Superpowers ─── */
+        .superpowers {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .superpower {
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .superpower::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            border-radius: 3px 0 0 3px;
+            transition: height 0.3s ease;
+        }
+
+        .superpower:nth-child(1)::before { background: var(--gradient-accent); }
+        .superpower:nth-child(2)::before { background: var(--gradient-teal); }
+        .superpower:nth-child(3)::before { background: var(--gradient-warm); }
+        .superpower:nth-child(4)::before { background: linear-gradient(135deg, #f43f5e, #e879f9); }
+
+        .superpower:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-accent);
+            transform: translateY(-2px);
+        }
+
+        .superpower__icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .superpower__title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .superpower__desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ─── Core Values ─── */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        .value-item {
+            padding: 1rem 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .value-item:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-1px);
+        }
+
+        .value-item__label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .value-item__sub {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* ─── Experience ─── */
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 8px;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--accent) 0%, var(--border) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 2.25rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 2px;
+            top: 10px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+            border: 2px solid var(--accent);
+            z-index: 1;
+        }
+
+        .timeline-item:first-child::before {
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent-glow);
+        }
+
+        .timeline-item__header {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-item__role {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .timeline-item__company {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--accent-light);
+        }
+
+        .timeline-item__meta {
+            font-size: 0.8rem;
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+        }
+
+        .timeline-item__achievements {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-item__achievements li {
+            position: relative;
+            padding-left: 1.1rem;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.35rem;
+            line-height: 1.6;
+        }
+
+        .timeline-item__achievements li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .timeline-item__achievements .highlight {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* ─── Skills ─── */
+        .skills-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .skill-group__title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-light);
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .skill-tag {
+            font-size: 0.78rem;
+            font-weight: 400;
+            padding: 0.3rem 0.65rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--border-accent);
+            color: var(--text-primary);
+            background: var(--accent-glow);
+        }
+
+        .skill-tag--primary {
+            border-color: var(--border-accent);
+            color: var(--text-primary);
+            background: var(--accent-glow);
+        }
+
+        /* ─── Languages ─── */
+        .languages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .lang-item {
+            padding: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+        }
+
+        .lang-item__name {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .lang-item__bar {
+            width: 100%;
+            height: 3px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .lang-item__fill {
+            height: 100%;
+            border-radius: 3px;
+            background: var(--gradient-accent);
+            transition: width 1s ease;
+        }
+
+        .lang-item__level {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.35rem;
+        }
+
+        /* ─── Education ─── */
+        .education {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .education__icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .education__details {
+            flex: 1;
+        }
+
+        .education__degree {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .education__school {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .education__year {
+            font-size: 0.8rem;
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+        }
+
+        /* ─── Footer ─── */
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* ─── Print ─── */
+        @media print {
             body {
-                background: var(--bg);
-                color: var(--text);
-                line-height: 1.6;
-                padding: 2rem;
+                background: #fff;
+                color: #111;
             }
-            .container {
-                max-width: 900px;
-                margin: 0 auto;
-                background: #ffffff;
-                border-radius: 0.75rem;
-                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-                padding: 3rem;
+            body::before { display: none; }
+            .page { padding: 0; max-width: 100%; }
+            .superpower, .value-item, .lang-item, .education, .timeline-item {
+                break-inside: avoid;
             }
-            header {
-                text-align: center;
-                margin-bottom: 2rem;
+            .superpower:hover, .value-item:hover, .skill-tag:hover {
+                transform: none;
+                background: initial;
             }
-            header h1 {
-                font-size: 2.5rem;
-                font-weight: 700;
-                color: var(--primary);
+            .header__name {
+                background: none;
+                -webkit-text-fill-color: #111;
+                color: #111;
             }
-            header h2 {
-                font-size: 1.25rem;
-                font-weight: 600;
-                color: var(--accent);
-                margin-top: 0.25rem;
-            }
-            .contact {
-                margin-top: 1rem;
-                display: flex;
-                justify-content: center;
-                gap: 1.5rem;
-                font-size: 0.95rem;
-                color: var(--muted);
-            }
-            section {
-                margin-top: 2.5rem;
-            }
-            section h3 {
-                font-size: 1.5rem;
-                font-weight: 700;
-                color: var(--primary);
-                margin-bottom: 1rem;
-                border-bottom: 2px solid var(--accent);
-                display: inline-block;
-                padding-bottom: 0.25rem;
-            }
-            .experience-item {
-                margin-bottom: 1.5rem;
-            }
-            .experience-item h4 {
-                font-size: 1.1rem;
-                font-weight: 600;
-                color: var(--accent);
-            }
-            .experience-meta {
-                font-size: 0.9rem;
-                color: var(--muted);
-                margin-bottom: 0.35rem;
-            }
-            .experience-item ul {
-                list-style: disc;
-                margin-left: 1.25rem;
-                margin-top: 0.5rem;
-            }
-            .skill-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-            }
-            .skill-list span {
-                background: var(--accent);
-                color: #ffffff;
-                padding: 0.35rem 0.6rem;
-                border-radius: 0.4rem;
-                font-size: 0.85rem;
-            }
-            .lang-list {
-                margin-top: 1rem;
-            }
-            .lang {
-                display: flex;
-                align-items: center;
-                margin-bottom: 0.5rem;
-            }
-            .lang-name {
-                width: 120px;
-            }
-            .bar {
-                flex: 1;
-                height: 8px;
-                background: var(--bg);
-                border-radius: 4px;
-                overflow: hidden;
-            }
-            .bar-fill {
-                height: 100%;
-                background: var(--accent);
-            }
-            .quote {
-                font-style: italic;
-                color: var(--muted);
-                border-left: 4px solid var(--accent);
-                padding-left: 1rem;
-                margin-top: 1rem;
-            }
-            .proud-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 1rem;
-                margin-top: 1rem;
-            }
-            .proud-card {
-                background: var(--bg);
-                padding: 1rem;
-                border-left: 4px solid var(--accent);
-                border-radius: 0.5rem;
-            }
-            .education-item {
-                font-size: 1rem;
-            }
-            @media (max-width: 600px) {
-                body {
-                    padding: 1rem;
-                }
-                .container {
-                    padding: 1.5rem;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <main class="container">
-            <header>
-                <h1>Jan Mašarski</h1>
-                <h2>Game Development Expert &amp; Software Engineer</h2>
-                <div class="contact">
-                    <span>yanmasharski[@]gmail.com</span>
-                    <span>Oeiras, Lisbon, Portugal</span>
-                </div>
-            </header>
-            <section>
-                <h3>Life Philosophy</h3>
-                <p class="quote">
-                    “Do the unexpected, do the impossible, do what no one else
-                    does—and then you will win.”
-                </p>
-            </section>
-            <section>
-                <h3>Experience</h3>
-                <div class="experience-item">
-                    <h4>Head of Software Engineering – Original Games</h4>
-                    <div class="experience-meta">
-                        Oct 2020 – Mar 2025 · Lisbon, Portugal
+            .header__title { color: #6366f1; }
+            .section__title { color: #666; }
+            .timeline-item__role { color: #111; }
+            .timeline-item__company { color: #6366f1; }
+            .timeline-item__achievements li { color: #333; }
+            .skill-tag { border-color: #ddd; color: #333; background: #f5f5f5; }
+            .skill-tag--primary { background: #e8e8fd; border-color: #6366f1; }
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 680px) {
+            .page { padding: 2rem 1.25rem 3rem; }
+            .header__name { font-size: 2.2rem; }
+            .header__title { font-size: 1.05rem; }
+            .superpowers { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .skills-section { grid-template-columns: 1fr; gap: 1.5rem; }
+            .header__contact { gap: 1rem; }
+        }
+
+        @media (max-width: 420px) {
+            .header__name { font-size: 1.8rem; }
+            .values-grid { grid-template-columns: 1fr; }
+            .languages { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* ─── Entrance Animations ─── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header { animation: fadeUp 0.6s ease both; }
+        .philosophy { animation: fadeUp 0.6s 0.1s ease both; }
+        .section:nth-child(3) { animation: fadeUp 0.6s 0.15s ease both; }
+        .section:nth-child(4) { animation: fadeUp 0.6s 0.2s ease both; }
+        .section:nth-child(5) { animation: fadeUp 0.6s 0.25s ease both; }
+        .section:nth-child(6) { animation: fadeUp 0.6s 0.3s ease both; }
+        .section:nth-child(7) { animation: fadeUp 0.6s 0.35s ease both; }
+        .section:nth-child(8) { animation: fadeUp 0.6s 0.4s ease both; }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <!-- ═══ HEADER ═══ -->
+        <header class="header" id="header">
+            <h1 class="header__name">Jan Mašarski</h1>
+            <p class="header__title">Systems Architect · Engineering Leader · Problem Solver</p>
+            <p class="header__tagline">
+                I build order from chaos. 15+ years of designing high-performance game systems,
+                leading engineering teams, and solving problems others walk away from.
+                I think in systems, decide with data, and optimize relentlessly.
+            </p>
+            <div class="header__contact">
+                <span class="header__contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <a href="mailto:yanmasharski@gmail.com">yanmasharski@gmail.com</a>
+                </span>
+                <span class="header__contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Oeiras, Lisbon, Portugal
+                </span>
+                <span class="header__contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    <a href="https://www.linkedin.com/in/yanmasharski" target="_blank" rel="noopener">linkedin.com/in/yanmasharski</a>
+                </span>
+            </div>
+        </header>
+
+        <!-- ═══ PHILOSOPHY ═══ -->
+        <div class="philosophy" id="philosophy">
+            <p class="philosophy__text">
+                Do the unexpected, do the impossible, do what no one else does — and then you will win.
+            </p>
+        </div>
+
+        <!-- ═══ WHAT I BRING ═══ -->
+        <section class="section" id="superpowers">
+            <h2 class="section__title">What I Bring</h2>
+            <div class="superpowers">
+                <div class="superpower">
+                    <div class="superpower__icon">🧠</div>
+                    <div class="superpower__title">Systems Thinking</div>
+                    <div class="superpower__desc">
+                        I see architectures, not features. I model cause-and-effect chains,
+                        spot structural problems early, and design solutions that last years, not sprints.
                     </div>
-                    <ul>
-                        <li>
-                            Led architectural and design efforts for mobile
-                            casual games, ensuring robust, scalable, and secure
-                            systems.
-                        </li>
-                        <li>
-                            Boosted development team performance through
-                            focus‑enhancing techniques, improving work‑life
-                            balance.
-                        </li>
-                        <li>
-                            Designed and integrated a custom cost‑effective
-                            social backend (teams, chat, mailbox, leaderboards,
-                            tournaments).
-                        </li>
-                        <li>
-                            Reduced backend costs by migrating services from
-                            Azure PlayFab to internal solutions.
-                        </li>
-                        <li>
-                            Restored lost saves for over 300 000 users after
-                            project acquisition.
-                        </li>
+                </div>
+                <div class="superpower">
+                    <div class="superpower__icon">🔧</div>
+                    <div class="superpower__title">Crisis Problem Solving</div>
+                    <div class="superpower__desc">
+                        The go-to person when things are broken, lost, or "impossible."
+                        Restored 300K+ user saves. Cut backend costs by 90%. Shipped under impossible deadlines.
+                    </div>
+                </div>
+                <div class="superpower">
+                    <div class="superpower__icon">⚡</div>
+                    <div class="superpower__title">Performance Optimization</div>
+                    <div class="superpower__desc">
+                        2× performance gains on mid/low-end devices. Relentless about efficiency —
+                        in code, in processes, in costs. Every cycle and every dollar matters.
+                    </div>
+                </div>
+                <div class="superpower">
+                    <div class="superpower__icon">🚀</div>
+                    <div class="superpower__title">Team Elevation</div>
+                    <div class="superpower__desc">
+                        I mentor engineers into leaders. I build focus-first cultures, reduce noise,
+                        and create environments where deep work thrives. Teams I lead ship better and feel better.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ CORE VALUES ═══ -->
+        <section class="section" id="values">
+            <h2 class="section__title">Core Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-item__label">Rationality</div>
+                    <div class="value-item__sub">Evidence over opinion</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-item__label">Intellectual Honesty</div>
+                    <div class="value-item__sub">No self-deception</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-item__label">Ownership</div>
+                    <div class="value-item__sub">Accountable for outcomes</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-item__label">Craftsmanship</div>
+                    <div class="value-item__sub">Respect for mastery</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-item__label">Long-term Thinking</div>
+                    <div class="value-item__sub">Sustainable over quick</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-item__label">Pragmatism</div>
+                    <div class="value-item__sub">No waste, no pretense</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ EXPERIENCE ═══ -->
+        <section class="section" id="experience">
+            <h2 class="section__title">Experience</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-item__header">
+                        <span class="timeline-item__role">Tech Lead</span>
+                        <span class="timeline-item__company">— Nexters (Hero Wars Mobile)</span>
+                    </div>
+                    <div class="timeline-item__meta">Jul 2025 – Present · Remote / Lisbon</div>
+                    <ul class="timeline-item__achievements">
+                        <li>Leading a cross-functional team (4 engineers, 3 QA, PO, 2 game designers) on a <span class="highlight">new 4X strategy game mode</span></li>
+                        <li>Delivered first phase under highly constrained timelines; second phase in active development</li>
+                        <li>Transitioned team to Scrum — better focus, prioritization, and deadline management</li>
+                        <li>Reduced development time <span class="highlight">10–20%</span> via structured AI-assisted workflows across engineering and game design</li>
+                        <li>Established a culture of effective AI usage, improving productivity and decision-making speed</li>
                     </ul>
                 </div>
-                <div class="experience-item">
-                    <h4>
-                        Lead Software Engineer – Alchemical Inc. (now Original
-                        Games)
-                    </h4>
-                    <div class="experience-meta">
-                        May 2018 – Oct 2020 · St. Petersburg, Russia
+
+                <div class="timeline-item">
+                    <div class="timeline-item__header">
+                        <span class="timeline-item__role">Head of Software Engineering</span>
+                        <span class="timeline-item__company">— Original Games</span>
                     </div>
-                    <ul>
-                        <li>
-                            Led development of hyper‑casual games with a focus
-                            on cost‑effective solutions.
-                        </li>
-                        <li>
-                            Integrated third‑party SDKs (analytics, attribution,
-                            ads) to enhance functionality.
-                        </li>
-                        <li>
-                            Optimized game performance and UX across multiple
-                            mobile platforms.
-                        </li>
+                    <div class="timeline-item__meta">Oct 2020 – Mar 2025 · Lisbon</div>
+                    <ul class="timeline-item__achievements">
+                        <li>Architected systems for mobile casual games — robust, scalable, secure</li>
+                        <li>Designed custom social backend (teams, chat, mailbox, leaderboards, tournaments) — <span class="highlight">90% cost reduction</span> vs. Azure PlayFab</li>
+                        <li><span class="highlight">Restored lost saves for 300,000+ users</span> after project acquisition — when recovery seemed impossible</li>
+                        <li>Created a low-cost LiveOps system from scratch</li>
+                        <li>Led 3 engineering teams across Portugal and Eastern Europe</li>
+                        <li>Mentored engineers into leadership roles; introduced knowledge-sharing rituals</li>
+                        <li>Boosted team performance through focus-enhancing techniques and better work-life balance</li>
                     </ul>
                 </div>
-                <div class="experience-item">
-                    <h4>
-                        Lead Software Engineer – Harbor Crew (now Original
-                        Games)
-                    </h4>
-                    <div class="experience-meta">
-                        Oct 2016 – May 2018 · St. Petersburg, Russia
+
+                <div class="timeline-item">
+                    <div class="timeline-item__header">
+                        <span class="timeline-item__role">Lead Software Engineer</span>
+                        <span class="timeline-item__company">— Alchemical Inc. → Original Games</span>
                     </div>
-                    <ul>
-                        <li>
-                            Managed development of casual games, emphasizing
-                            performance optimization.
-                        </li>
-                        <li>
-                            Integrated third‑party SDKs to expand capabilities
-                            and monetization strategies.
-                        </li>
+                    <div class="timeline-item__meta">May 2018 – Oct 2020 · St. Petersburg</div>
+                    <ul class="timeline-item__achievements">
+                        <li>Led hyper-casual game development with a cost-effective engineering approach</li>
+                        <li>Integrated analytics, attribution, and ads SDK ecosystem</li>
+                        <li>Contributed to multiplayer networking layer in Unity</li>
+                        <li>Optimized performance across mobile platforms</li>
                     </ul>
                 </div>
-                <div class="experience-item">
-                    <h4>Lead Software Engineer – EPAM Systems</h4>
-                    <div class="experience-meta">
-                        Feb 2016 – Oct 2016 · St. Petersburg, Russia
+
+                <div class="timeline-item">
+                    <div class="timeline-item__header">
+                        <span class="timeline-item__role">Lead Software Engineer</span>
+                        <span class="timeline-item__company">— Harbor Crew → Original Games</span>
                     </div>
-                    <ul>
-                        <li>
-                            Promoted from Senior to Lead within six months for
-                            exceptional performance.
-                        </li>
-                        <li>
-                            Developed a high‑end mobile visualization app for
-                            medical reports with interactive elements.
-                        </li>
-                        <li>
-                            Collaborated with cross‑functional teams to deliver
-                            a user‑friendly interface.
-                        </li>
+                    <div class="timeline-item__meta">Oct 2016 – May 2018 · St. Petersburg</div>
+                    <ul class="timeline-item__achievements">
+                        <li>Managed casual game development with focus on performance optimization</li>
+                        <li>Integrated SDKs for monetization and analytics</li>
                     </ul>
                 </div>
-                <div class="experience-item">
-                    <h4>Contractor Software Engineer II – Electronic Arts</h4>
-                    <div class="experience-meta">
-                        May 2015 – Dec 2015 · St. Petersburg, Russia
+
+                <div class="timeline-item">
+                    <div class="timeline-item__header">
+                        <span class="timeline-item__role">Lead Software Engineer</span>
+                        <span class="timeline-item__company">— EPAM Systems</span>
                     </div>
-                    <ul>
-                        <li>
-                            Delivered performance optimizations for a mobile
-                            multiplayer game, enhancing FPS.
-                        </li>
-                        <li>
-                            Co‑operated with global teams to ensure seamless
-                            feature integration.
-                        </li>
+                    <div class="timeline-item__meta">Feb 2016 – Oct 2016 · St. Petersburg</div>
+                    <ul class="timeline-item__achievements">
+                        <li><span class="highlight">Promoted from Senior to Lead in 6 months</span> for exceptional performance</li>
+                        <li>Developed mobile visualization app for interactive medical/DNA reports</li>
+                        <li>Collaborated with cross-functional healthcare teams</li>
                     </ul>
                 </div>
-                <div class="experience-item">
-                    <h4>Software Engineer – AggroStudios</h4>
-                    <div class="experience-meta">
-                        Nov 2013 – Feb 2016 · St. Petersburg, Russia
+
+                <div class="timeline-item">
+                    <div class="timeline-item__header">
+                        <span class="timeline-item__role">Contractor Software Engineer II</span>
+                        <span class="timeline-item__company">— Electronic Arts</span>
                     </div>
-                    <ul>
-                        <li>
-                            Developed a high‑performance mobile RTS game
-                            optimized for various devices.
-                        </li>
-                        <li>
-                            Created a custom ECS to manage numerous units and
-                            objects.
-                        </li>
-                        <li>
-                            Built VR applications for Google Cardboard
-                            analogues.
-                        </li>
+                    <div class="timeline-item__meta">May 2015 – Dec 2015 · St. Petersburg</div>
+                    <ul class="timeline-item__achievements">
+                        <li>Delivered FPS performance optimizations for a mobile multiplayer game</li>
+                        <li>Worked with distributed global teams</li>
                     </ul>
                 </div>
-                <div class="experience-item">
-                    <h4>Software Engineer – Happy Kids</h4>
-                    <div class="experience-meta">
-                        Aug 2012 – Nov 2013 · St. Petersburg, Russia
+
+                <div class="timeline-item">
+                    <div class="timeline-item__header">
+                        <span class="timeline-item__role">Software Engineer</span>
+                        <span class="timeline-item__company">— AggroStudios</span>
                     </div>
-                    <ul>
-                        <li>
-                            Developed a player for interactive content,
-                            bypassing Apple's executable code loading
-                            restrictions.
-                        </li>
-                        <li>
-                            Optimized applications and helped launch the product
-                            and content pipeline.
-                        </li>
+                    <div class="timeline-item__meta">Nov 2013 – Feb 2016 · St. Petersburg</div>
+                    <ul class="timeline-item__achievements">
+                        <li>Developed mobile RTS optimized for diverse device tiers</li>
+                        <li>Built a <span class="highlight">custom ECS</span> for managing hundreds of units and objects</li>
+                        <li>Created VR applications for Google Cardboard-class devices</li>
                     </ul>
                 </div>
-                <div class="experience-item">
-                    <h4>Software Engineer – Panoramik Inc.</h4>
-                    <div class="experience-meta">
-                        Apr 2011 – Aug 2012 · St. Petersburg, Russia
+
+                <div class="timeline-item">
+                    <div class="timeline-item__header">
+                        <span class="timeline-item__role">Software Engineer</span>
+                        <span class="timeline-item__company">— Happy Kids</span>
                     </div>
-                    <ul>
-                        <li>
-                            Delivered performance optimizations for a mobile
-                            multiplayer game, enhancing FPS.
-                        </li>
-                        <li>
-                            Collaborated closely with global teams for feature
-                            integration.
-                        </li>
+                    <div class="timeline-item__meta">Aug 2012 – Nov 2013 · St. Petersburg</div>
+                    <ul class="timeline-item__achievements">
+                        <li>Built a player for interactive content, bypassing Apple's executable code loading restrictions</li>
+                        <li>Launched the product and content pipeline from scratch</li>
                     </ul>
                 </div>
-                <div class="experience-item">
-                    <h4>Software Engineer – Topface</h4>
-                    <div class="experience-meta">
-                        Apr 2010 – Feb 2011 · St. Petersburg, Russia
+
+                <div class="timeline-item">
+                    <div class="timeline-item__header">
+                        <span class="timeline-item__role">Software Engineer</span>
+                        <span class="timeline-item__company">— Panoramik Inc.</span>
                     </div>
-                    <ul>
-                        <li>
-                            Sole client engineer for two VK platform game
-                            projects similar to The Sims and Angry Birds.
-                        </li>
-                        <li>Handled all aspects of client‑side development.</li>
+                    <div class="timeline-item__meta">Apr 2011 – Aug 2012 · St. Petersburg</div>
+                    <ul class="timeline-item__achievements">
+                        <li>Improved FPS in a mobile multiplayer game</li>
+                        <li>Integrated features with global distributed teams</li>
                     </ul>
                 </div>
-            </section>
-            <section>
-                <h3>Most Proud Of</h3>
-                <div class="proud-grid">
-                    <div class="proud-card">
-                        <strong>Problem Solving</strong><br />Trusted go‑to
-                        person for resolving seemingly unsolvable problems and
-                        rescuing projects in crisis.
+
+                <div class="timeline-item">
+                    <div class="timeline-item__header">
+                        <span class="timeline-item__role">Software Engineer</span>
+                        <span class="timeline-item__company">— Topface</span>
                     </div>
-                    <div class="proud-card">
-                        <strong>Team Leadership</strong><br />Mentored
-                        developers through knowledge sharing, enabling rapid
-                        growth into lead roles.
+                    <div class="timeline-item__meta">Apr 2010 – Feb 2011 · St. Petersburg</div>
+                    <ul class="timeline-item__achievements">
+                        <li>Sole client engineer for two VK platform games (Sims-like, Angry Birds-like)</li>
+                        <li>Handled all aspects of client-side development end to end</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══ SKILLS ═══ -->
+        <section class="section" id="skills">
+            <h2 class="section__title">Technical Skills</h2>
+            <div class="skills-section">
+                <div>
+                    <div class="skill-group__title">Core Stack</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag skill-tag--primary">Unity Engine</span>
+                        <span class="skill-tag skill-tag--primary">C#</span>
+                        <span class="skill-tag skill-tag--primary">.NET</span>
+                        <span class="skill-tag">Cocos Creator</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Objective-C</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Lua</span>
+                        <span class="skill-tag">ActionScript</span>
+                        <span class="skill-tag">Cocos2d</span>
+                        <span class="skill-tag">Virtual Reality</span>
+                        <span class="skill-tag">OOP</span>
                     </div>
-                    <div class="proud-card">
-                        <strong>Technical Innovations</strong><br />Reduced
-                        backend costs by 90 % and improved game performance 2×
-                        on mid &amp; low‑end devices.
-                    </div>
-                    <div class="proud-card">
-                        <strong>User Impact</strong><br />Restored game progress
-                        for users when it was almost impossible.
+
+                    <div class="skill-group__title" style="margin-top:1.5rem">Architecture & Systems</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag skill-tag--primary">Systems Architecture</span>
+                        <span class="skill-tag skill-tag--primary">ECS</span>
+                        <span class="skill-tag skill-tag--primary">Performance Optimization</span>
+                        <span class="skill-tag">Multiplayer Networking</span>
+                        <span class="skill-tag">Multithreading</span>
+                        <span class="skill-tag">REST API Design</span>
+                        <span class="skill-tag">Cost Optimization</span>
+                        <span class="skill-tag">Network Optimization</span>
                     </div>
                 </div>
-            </section>
-            <section>
-                <h3>Skills</h3>
-                <div class="skill-list">
-                    <span>Unity Engine</span>
-                    <span>Cocos Creator</span>
-                    <span>C#</span>
-                    <span>.NET</span>
-                    <span>Objective‑C</span>
-                    <span>C++</span>
-                    <span>JavaScript</span>
-                    <span>TypeScript</span>
-                    <span>Node.js</span>
-                    <span>Firebase</span>
-                    <span>Heroic Cloud</span>
-                    <span>AI integration</span>
-                    <span>SCRUM</span>
-                    <span>Agile</span>
-                    <span>VR</span>
-                    <span>AR</span>
-                    <span>Ad‑monetization</span>
-                    <span>Analytics</span>
-                    <span>LiveOps</span>
-                    <span>REST API</span>
-                    <span>DevOps</span>
-                    <span>GCP</span>
-                    <span>AWS</span>
-                    <span>BigQuery</span>
-                    <span>Jenkins</span>
-                    <span>Git</span>
-                    <span>SVN</span>
-                    <span>Mercurial</span>
-                    <span>Multithreading</span>
-                    <span>Performance opt.</span>
-                    <span>Cost opt.</span>
-                    <span>Network opt.</span>
-                    <span>Team management</span>
-                    <span>Critical Thinking</span>
-                    <span>Unit‑tests</span>
-                    <span>Auto‑tests</span>
-                    <span>Mixpanel</span>
-                    <span>Kochava</span>
-                    <span>Google Analytics</span>
-                    <span>Tableau</span>
-                    <span>Adjust</span>
-                    <span>Appsflyer</span>
-                    <span>Applovin</span>
-                    <span>IronSource</span>
-                    <span>Balancy</span>
-                    <span>Userwise</span>
-                    <span>CI/CD</span>
-                    <span>Odeeo</span>
-                    <span>Yookassa</span>
-                    <span>Xsolla</span>
-                    <span>Azure PlayFab</span>
-                    <span>GameAnalytics</span>
-                    <span>Tenjin</span>
-                    <span>TMA</span>
-                    <span>BigQuerry</span>
-                    <span>AdMob</span>
-                    <span>UnityAds</span>
-                    <span>Game Design</span>
-                    <span>ECS</span>
-                    <span>Satori</span>
-                    <span>Nakama</span>
-                    <span>Telegram MiniApps</span>
-                    <span>ActionScript</span>
-                    <span>Lua</span>
-                    <span>Looker Studio</span>
-                </div>
-            </section>
-            <section>
-                <h3>Languages</h3>
-                <div class="lang-list">
-                    <div class="lang">
-                        <span class="lang-name">English</span>
-                        <div class="bar">
-                            <div class="bar-fill" style="width: 80%"></div>
-                        </div>
+                <div>
+                    <div class="skill-group__title">Infrastructure & Cloud</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Firebase</span>
+                        <span class="skill-tag">GCP</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure PlayFab</span>
+                        <span class="skill-tag">Heroic Cloud</span>
+                        <span class="skill-tag">Nakama</span>
+                        <span class="skill-tag">BigQuery</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">DevOps</span>
                     </div>
-                    <div class="lang">
-                        <span class="lang-name">Belarusian</span>
-                        <div class="bar">
-                            <div class="bar-fill" style="width: 100%"></div>
-                        </div>
+
+                    <div class="skill-group__title" style="margin-top:1.5rem">Product & Analytics</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LiveOps</span>
+                        <span class="skill-tag">Game Design</span>
+                        <span class="skill-tag">Ad Monetization</span>
+                        <span class="skill-tag">IAP Monetization</span>
+                        <span class="skill-tag">AI Integration</span>
+                        <span class="skill-tag">Mixpanel</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Looker Studio</span>
+                        <span class="skill-tag">AppsFlyer</span>
+                        <span class="skill-tag">Adjust</span>
+                        <span class="skill-tag">Telegram MiniApps</span>
+                        <span class="skill-tag">AdMob</span>
+                        <span class="skill-tag">UnityAds</span>
+                        <span class="skill-tag">AppLovin</span>
+                        <span class="skill-tag">IronSource</span>
+                        <span class="skill-tag">Healthcare IT</span>
+                        <span class="skill-tag">Satori</span>
+                        <span class="skill-tag">Balancy</span>
                     </div>
-                    <div class="lang">
-                        <span class="lang-name">Russian</span>
-                        <div class="bar">
-                            <div class="bar-fill" style="width: 100%"></div>
-                        </div>
-                    </div>
-                    <div class="lang">
-                        <span class="lang-name">Ukrainian</span>
-                        <div class="bar">
-                            <div class="bar-fill" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="lang">
-                        <span class="lang-name">Portuguese</span>
-                        <div class="bar">
-                            <div class="bar-fill" style="width: 20%"></div>
-                        </div>
+
+                    <div class="skill-group__title" style="margin-top:1.5rem">Leadership</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag skill-tag--primary">Team Management</span>
+                        <span class="skill-tag skill-tag--primary">Scrum</span>
+                        <span class="skill-tag">Agile</span>
+                        <span class="skill-tag">Mentoring</span>
+                        <span class="skill-tag">Strategic Planning</span>
+                        <span class="skill-tag">Product Management</span>
+                        <span class="skill-tag">Project Management</span>
+                        <span class="skill-tag">Cross-team Coordination</span>
                     </div>
                 </div>
-            </section>
-            <section>
-                <h3>Education</h3>
-                <p class="education-item">
-                    M.S. in Applied Math – Saint Petersburg State
-                    Electrotechnical University "LETI" (2006 – 2012)
-                </p>
-            </section>
-        </main>
-    </body>
+            </div>
+        </section>
+
+        <!-- ═══ LANGUAGES ═══ -->
+        <section class="section" id="languages">
+            <h2 class="section__title">Languages</h2>
+            <div class="languages">
+                <div class="lang-item">
+                    <div class="lang-item__name">English</div>
+                    <div class="lang-item__bar"><div class="lang-item__fill" style="width:80%"></div></div>
+                    <div class="lang-item__level">Professional</div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-item__name">Belarusian</div>
+                    <div class="lang-item__bar"><div class="lang-item__fill" style="width:100%"></div></div>
+                    <div class="lang-item__level">Native</div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-item__name">Russian</div>
+                    <div class="lang-item__bar"><div class="lang-item__fill" style="width:100%"></div></div>
+                    <div class="lang-item__level">Native</div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-item__name">Ukrainian</div>
+                    <div class="lang-item__bar"><div class="lang-item__fill" style="width:80%"></div></div>
+                    <div class="lang-item__level">Professional</div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-item__name">Portuguese</div>
+                    <div class="lang-item__bar"><div class="lang-item__fill" style="width:20%"></div></div>
+                    <div class="lang-item__level">Beginner</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ EDUCATION ═══ -->
+        <section class="section" id="education">
+            <h2 class="section__title">Education</h2>
+            <div class="education">
+                <div class="education__icon">🎓</div>
+                <div class="education__details">
+                    <div class="education__degree">M.S. in Applied Mathematics</div>
+                    <div class="education__school">Saint Petersburg State Electrotechnical University "LETI"</div>
+                </div>
+                <div class="education__year">2006 – 2012</div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Built to last. Like everything else I make.</p>
+        </footer>
+    </main>
+</body>
 </html>
