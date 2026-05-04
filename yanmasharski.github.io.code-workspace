@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../0-personal"
+		},
+		{
+			"path": "../0-engineering"
+		}
+	],
+	"settings": {}
+}

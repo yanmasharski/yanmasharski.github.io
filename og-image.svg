@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Jan Maaarski  Senior / Staff Unity Engineer</title>
+  <desc id="desc">Mobile F2P, game systems and architecture, LiveOps, performance, 15+ years.</desc>
+  <defs>
+    <radialGradient id="bg1" cx="18%" cy="15%" r="65%">
+      <stop offset="0" stop-color="#3730a3" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#0a0a0f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg2" cx="86%" cy="82%" r="70%">
+      <stop offset="0" stop-color="#0f766e" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#0a0a0f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#818cf8"/>
+      <stop offset="0.52" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#14b8a6"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0a0a0f"/>
+  <rect width="1200" height="630" fill="url(#bg1)"/>
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="76" y="78" width="1048" height="474" rx="34" fill="#12121a" fill-opacity="0.82" stroke="#ffffff" stroke-opacity="0.08"/>
+  </g>
+
+  <text x="118" y="164" fill="#8b8b9e" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="5">SENIOR / STAFF UNITY ENGINEER</text>
+  <text x="118" y="260" fill="#e8e8ed" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="800" letter-spacing="-3">Jan Maaarski</text>
+  <rect x="118" y="297" width="184" height="5" rx="3" fill="url(#accent)"/>
+
+  <text x="118" y="372" fill="#c7c7d8" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="500">Mobile F2P · Game Systems &amp; Architecture</text>
+  <text x="118" y="426" fill="#8b8b9e" font-family="Inter, Arial, sans-serif" font-size="30">LiveOps · Nakama/Node backends · Performance · 15+ years</text>
+
+  <g transform="translate(118 480)">
+    <rect width="162" height="42" rx="21" fill="#6366f1" fill-opacity="0.18" stroke="#818cf8" stroke-opacity="0.42"/>
+    <text x="24" y="28" fill="#e8e8ed" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">Unity</text>
+    <rect x="184" width="222" height="42" rx="21" fill="#14b8a6" fill-opacity="0.14" stroke="#14b8a6" stroke-opacity="0.42"/>
+    <text x="208" y="28" fill="#e8e8ed" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">Mobile F2P</text>
+    <rect x="428" width="236" height="42" rx="21" fill="#8b5cf6" fill-opacity="0.14" stroke="#a78bfa" stroke-opacity="0.42"/>
+    <text x="452" y="28" fill="#e8e8ed" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">LiveOps</text>
+  </g>
+</svg>
